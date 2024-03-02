@@ -33,19 +33,19 @@ points:
         num:
     thumbfan:
       anchor:
-        ref: matrix_index_bottom
+        ref: matrix_middle_bottom
         shift: [0, -u]
       columns:
         first:
         second:
           key.stagger: -1 # Same as inner key.stagger
         home:
-          key.spread: 21
-          key.splay: -20
+          key.spread: 15+u
+          key.splay: -35
           key.origin: [-11.75, -9]
         far:
           key.spread: 21
-          key.splay: -10
+          key.splay: -5
           key.origin: [-9.5, -9]
       rows:
         thumb:
