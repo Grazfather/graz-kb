@@ -1,0 +1,55 @@
+# https://ergogen.cache.works/
+meta:
+  version: 0.1.0
+  author: Graziano Misuraca
+points:
+  key:
+    padding: cy
+    tags:
+      1u: true
+    footprints:
+      choc_hotswap:
+        type: choc
+  zones:
+    matrix:
+      anchor:
+        rotate: 5
+      columns:
+        outer:
+        pinky:
+          key.stagger: 3
+        ring:
+          key.stagger: 3
+        middle:
+          key.stagger: 3
+        index:
+          key.stagger: -3
+        inner:
+          key.stagger: -1
+      rows:
+        bottom:
+        home:
+        top:
+        num:
+    thumbfan:
+      anchor:
+        ref: matrix_index_bottom
+        shift: [0, -u]
+      columns:
+        first:
+        second:
+          key.stagger: -1 # Same as inner key.stagger
+        home:
+          key.spread: 21
+          key.splay: -20
+          key.origin: [-11.75, -9]
+        far:
+          key.spread: 21
+          key.splay: -10
+          key.origin: [-9.5, -9]
+      rows:
+        thumb:
+  rotate: -20
+  mirror:
+    ref: matrix_pinky_home
+    distance: 250
