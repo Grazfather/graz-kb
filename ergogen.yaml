@@ -10,6 +10,11 @@ points:
     footprints:
       choc_hotswap:
         type: choc
+        params:
+          hotswap: true
+          reverse: true
+          keycaps: true
+
   zones:
     matrix:
       anchor:
@@ -53,3 +58,7 @@ points:
   mirror:
     ref: matrix_pinky_home
     distance: 250
+outlines.exports:
+  plate:
+    type: keys
+    side: both
