@@ -2,9 +2,20 @@
 meta:
   version: 0.1.0
   author: Graziano Misuraca
+units:
+  # Choc spacing
+  kx: cx
+  ky: cy
+  # Padding Variables
+  px: kx + 2
+  py: ky + 2
+  # For preview only
+  $default_width: cx
+  $default_height: cy
 points:
   key:
-    padding: cy
+    padding: ky
+    spread: kx
     tags:
       1u: true
     footprints:
@@ -17,11 +28,11 @@ points:
 
   zones:
     matrix:
-      anchor:
-        rotate: 5
       columns:
         outer:
+          rows.mod.skip: true
         pinky:
+          rows.mod.skip: true
           key.stagger: 3
         ring:
           key.stagger: 3
@@ -30,31 +41,30 @@ points:
         index:
           key.stagger: -3
         inner:
-          key.stagger: -1
+          key.stagger: -2
+          rows.mod.skip: true
       rows:
+        mod:
         bottom:
         home:
         top:
         num:
     thumbfan:
       anchor:
-        ref: matrix_index_bottom
-        shift: [0, -cy]
+        ref: matrix_inner_mod
+        shift: [3, 3]
       columns:
-        first:
-        second:
-          key.stagger: -1 # Same as inner key.stagger
         home:
-          key.spread: 4+cx
+          key.spread: 4+kx
           key.splay: -35
-          key.origin: [-20.75, -9]
+          key.origin: [-20.75, -19]
         far:
           key.spread: 21
           key.splay: -5
           key.origin: [-9.5, -9]
       rows:
         thumb:
-  rotate: -20
+  rotate: -15
   mirror:
     ref: matrix_pinky_home
     distance: 250
