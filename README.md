@@ -21,6 +21,8 @@
   * Order labeled parts
   * Verify footprints - Use measuring tools
   * Consider part availability
+### Tutorials
+* https://flatfootfox.com/ergogen-introduction/ - Great guide
 
 ### Tools
 * Ergogen
