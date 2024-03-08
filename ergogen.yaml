@@ -7,12 +7,13 @@ units:
   kx: cx
   ky: cy
   # Padding Variables
-  px: kx + 2
-  py: ky + 2
-  # For preview only
-  $default_width: cx
-  $default_height: cy
+  px: kx + 4
+  py: ky + 4
+  # For preview only. We show slightly smaller to ID overlaps
+  $default_width: cx-1
+  $default_height: cy-1
 points:
+  rotate: -20
   key:
     padding: ky
     spread: kx
@@ -52,7 +53,7 @@ points:
     thumbfan:
       anchor:
         ref: matrix_inner_mod
-        shift: [3, 3]
+        shift: [2, 8]
       columns:
         home:
           key.spread: 4+kx
@@ -64,11 +65,6 @@ points:
           key.origin: [-9.5, -9]
       rows:
         thumb:
-  rotate: -15
   mirror:
-    ref: matrix_pinky_home
-    distance: 250
-outlines.exports:
-  plate:
-    type: keys
-    side: both
+    ref: matrix_inner_home
+    distance: cx+60
