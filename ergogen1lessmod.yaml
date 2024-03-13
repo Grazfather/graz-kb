@@ -36,6 +36,7 @@ points:
           key.stagger: 3
         ring:
           key.stagger: 3
+          rows.mod.skip: true
         middle:
           key.stagger: 3
         index:
@@ -70,6 +71,7 @@ points:
   mirror:
     ref: matrix_inner_home
     distance: cx+60
+
 outlines:
   raw:
     - what: rectangle
@@ -90,7 +92,7 @@ outlines:
           shift: [0.5px,-0.5py]
         - ref: matrix_index_mod
           shift: [0.25px, -0.5py]
-        - ref: matrix_ring_mod
+        - ref: matrix_middle_mod
           shift: [-0.5px, -0.5py]
         - ref: matrix_outer_bottom
           shift: [-0.5px, -0.5py]
@@ -109,7 +111,7 @@ outlines:
           shift: [-0.5px, 0.5py]
         - ref: mirror_matrix_outer_bottom
           shift: [-0.5px, -0.5py]
-        - ref: mirror_matrix_ring_mod
+        - ref: mirror_matrix_middle_mod
           shift: [-0.5px, -0.5py]
         - ref: mirror_matrix_index_mod
           shift: [0.25px, -0.5py]
@@ -120,6 +122,7 @@ outlines:
     - name: board
     - operation: subtract
       name: keys
+
 pcbs:
   keyboard:
     outlines:
