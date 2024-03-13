@@ -144,9 +144,11 @@ pcbs:
         adjust:
           shift: [0, -5]
       board:
-        what: promicro # TODO: Pi pico with usbc?
+        what: promicro #footprints/waveshare_rp2040_zero
+        # what: footprints/waveshare_rp2040_zero
         params:
           orientation: down
+          # reversable: false # sic
         where:
           ref.aggregate.parts: [matrix_inner_top, mirror_matrix_inner_top]
           rotate: -90
@@ -154,8 +156,8 @@ pcbs:
         what: oled
         params:
           side: "F"
-          SDA: P2
-          SCL: P3
+          SDA: P0
+          SCL: P1
         where:
           ref.aggregate.parts: [matrix_inner_top, mirror_matrix_inner_top]
           shift: [-6,-19]
