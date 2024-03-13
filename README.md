@@ -31,7 +31,32 @@
 * Plate and case builder http://builder.swillkb.com/
 
 ## Parts
-### Sockets
+* OLED display
+  * https://42keebs.eu/shop/parts/oled-display-0-91-128x32/ - $4
+  * https://www.littlekeyboards.com/collections/oled-screens/products/oled-screen - $6
+* Microcontroller
+  * Pro Micro w/USB c - https://42keebs.eu/shop/parts/controllers/pro-micro-usb-c-controller/
+  * RP2040 with pro micro footprint - https://42keebs.eu/shop/parts/controllers/frood-rp2040-pro-micro-controller/
+  * Another RP2040 promicro - https://www.littlekeyboards.com/collections/new-products/products/elite-pi
+  * Waveshare zero - https://www.waveshare.com/rp2040-zero.htm
+* Sockets
+ * Low profile https://42keebs.eu/shop/parts/components/mill-max-315-sockets-3320-pins-for-pro-micro/
+ * Medium profile https://42keebs.eu/shop/parts/components/microcontroller-socket-medium-profile/
+* Hot-swap choc sockets
+  * https://42keebs.eu/shop/parts/kailh-choc-hot-swap-sockets/
+  * https://chosfox.com/collections/sockets-mouse-switches/products/kailh-choc-switch-1350-hot-swap-sockets
+* Switches
+ * V1
+   * https://www.littlekeyboards.com/collections/keyboard-switches/products/kailh-choc-pro-low-profile-switches
+   * https://www.littlekeyboards.com/collections/keyboard-switches/products/kailh-choc-low-profile-switches
+   * https://chosfox.com/products/kailh-chocs
+ * V2 - Don't get these? They can only be plate mounted?
+
 ### Switches
-Choc!
-Kailh robin?
+* Brown - tactile
+* Burnt orange - heavy tactile
+* White clicky
+* Robin lighets clicky
+* Jade click
+* Navy heavy clicky
+* Pale blue super heavy clicky?
