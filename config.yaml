@@ -162,3 +162,43 @@ pcbs:
           ref.aggregate.parts: [matrix_inner_top, mirror_matrix_inner_top]
           shift: [-6,-19]
           rotate: 90
+      holeTopLeft:
+        what: mountinghole
+        where:
+          ref: [matrix_outer_num]
+          shift: [0.5kx, -0.3ky]
+      holeBottomLeft:
+        what: mountinghole
+        where:
+          ref: [matrix_outer_bottom]
+          shift: [0.5kx, -0.3ky]
+      holeTopInnerLeft:
+        what: mountinghole
+        where:
+          ref: [matrix_index_num]
+          shift: [0.5kx, -0.4ky]
+      holeBottomInnerLeft:
+        what: mountinghole
+        where:
+          ref: [matrix_index_mod]
+          shift: [0.5kx, -0.35ky]
+      holeTopRight:
+        what: mountinghole
+        where:
+          ref: [mirror_matrix_outer_num]
+          shift: [0.5kx, -0.3ky]
+      holeBottomRight:
+        what: mountinghole
+        where:
+          ref: [mirror_matrix_outer_bottom]
+          shift: [0.5kx, -0.3ky]
+      holeTopInnerRight:
+        what: mountinghole
+        where:
+          ref: [mirror_matrix_index_num]
+          shift: [0.5kx, -0.4ky]
+      holeBottomInnerRight:
+        what: mountinghole
+        where:
+          ref: [mirror_matrix_index_mod]
+          shift: [0.5kx, -0.35ky]
