@@ -89,9 +89,9 @@ outlines:
         - ref: thumbfan_far_thumb
           shift: [0.5px,-0.5py]
         - ref: matrix_index_mod
-          shift: [0.25px, -0.5py]
+          shift: [0.25px, -0.65py]
         - ref: matrix_ring_mod
-          shift: [-0.5px, -0.5py]
+          shift: [-0.5px, -0.6py]
         - ref: matrix_outer_bottom
           shift: [-0.5px, -0.5py]
         - ref: matrix_outer_num
@@ -99,10 +99,10 @@ outlines:
         - ref: matrix_middle_num
           shift: [-0.5px, 0.65py]
         - ref: matrix_inner_num
-          shift: [0.5px, 0.5py]
+          shift: [0.5px, 0.65py]
 
         - ref: mirror_matrix_inner_num
-          shift: [0.5px, 0.5py]
+          shift: [0.5px, 0.65py]
         - ref: mirror_matrix_middle_num
           shift: [-0.5px, 0.65py]
         - ref: mirror_matrix_outer_num
@@ -110,9 +110,9 @@ outlines:
         - ref: mirror_matrix_outer_bottom
           shift: [-0.5px, -0.5py]
         - ref: mirror_matrix_ring_mod
-          shift: [-0.5px, -0.5py]
+          shift: [-0.5px, -0.6py]
         - ref: mirror_matrix_index_mod
-          shift: [0.25px, -0.5py]
+          shift: [0.25px, -0.65py]
         - ref: mirror_thumbfan_far_thumb
           shift: [0.5px,-0.5py]
       fillet: 5
