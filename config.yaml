@@ -31,24 +31,50 @@ points:
       columns:
         outer:
           rows.mod.skip: true
+          key:
+            column_net: col_outer
         pinky:
           rows.mod.skip: true
-          key.stagger: 3
+          key:
+            stagger: 3
+            column_net: col_pinky
         ring:
-          key.stagger: 3
+          key:
+            stagger: 3
+            column_net: col_ring
+          rows:
+            mod:
+              column_net: col_pinky
         middle:
-          key.stagger: 3
+          key:
+            stagger: 3
+            column_net: col_middle
+          rows:
+            mod:
+              column_net: col_ring
         index:
-          key.stagger: -3
+          key:
+            stagger: 3
+            column_net: col_index
+          rows:
+            mod:
+              column_net: col_middle
         inner:
-          key.stagger: -2
           rows.mod.skip: true
+          key:
+            stagger: -2
+            column_net: col_inner
       rows:
         mod:
+          row_net: row_mod
         bottom:
+          row_net: row_bottom
         home:
+          row_net: row_home
         top:
+          row_net: row_top
         num:
+          row_net: row_num
       # Fix placement on KiCAD sheet
       anchor:
         shift: [100, -100]
@@ -58,15 +84,20 @@ points:
         shift: [2, 8]
       columns:
         home:
-          key.spread: 4+kx
-          key.splay: -35
-          key.origin: [-20.75, -19]
+          key:
+            spread: 4+kx
+            splay: -35
+            origin: [-20.75, -19]
+            column_net: col_index
         far:
-          key.spread: 21
-          key.splay: -5
-          key.origin: [-9.5, -9]
+          key:
+            spread: 21
+            splay: -5
+            origin: [-9.5, -9]
+            column_net: col_inner
       rows:
         thumb:
+          row_net: row_mod
   mirror:
     ref: matrix_inner_home
     distance: cx+60
