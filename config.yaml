@@ -60,7 +60,7 @@ points:
               mirror.column_net: mirror_col_ring
         index:
           key:
-            stagger: 3
+            stagger: -4
             column_net: col_index
             mirror.column_net: mirror_col_index
           rows:
@@ -122,22 +122,23 @@ outlines:
     - what: rectangle
       where: true
       bound: false
-      size: [kx - 0.5, ky - 0.5]
+      #size: [kx - 0.5, ky - 0.5]
       #size: [kx, ky]
+      size: [13.80, 13.80]
   board:
     - what: polygon
       operation: stack
       points:
         - ref: thumbfan_far_thumb
-          shift: [0.5px,-0.5py]
+          shift: [0.55px,-0.55py]
         - ref: matrix_index_mod
-          shift: [0.25px, -0.65py]
+          shift: [0.5px, -0.65py]
         - ref: matrix_ring_mod
           shift: [-0.5px, -0.6py]
         - ref: matrix_outer_bottom
-          shift: [-0.5px, -0.5py]
+          shift: [-0.55px, -0.55py]
         - ref: matrix_outer_num
-          shift: [-0.5px, 0.5py]
+          shift: [-0.55px, 0.55py]
         - ref: matrix_middle_num
           shift: [-0.5px, 0.65py]
         - ref: matrix_inner_num
@@ -148,15 +149,15 @@ outlines:
         - ref: mirror_matrix_middle_num
           shift: [-0.5px, 0.65py]
         - ref: mirror_matrix_outer_num
-          shift: [-0.5px, 0.5py]
+          shift: [-0.55px, 0.55py]
         - ref: mirror_matrix_outer_bottom
-          shift: [-0.5px, -0.5py]
+          shift: [-0.55px, -0.55py]
         - ref: mirror_matrix_ring_mod
           shift: [-0.5px, -0.6py]
         - ref: mirror_matrix_index_mod
-          shift: [0.25px, -0.65py]
+          shift: [0.5px, -0.65py]
         - ref: mirror_thumbfan_far_thumb
-          shift: [0.5px,-0.5py]
+          shift: [0.55px,-0.55py]
       fillet: 5
   combo:
     - name: board
