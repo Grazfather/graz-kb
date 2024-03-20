@@ -39,12 +39,15 @@
   * RP2040 with pro micro footprint - https://42keebs.eu/shop/parts/controllers/frood-rp2040-pro-micro-controller/
   * Another RP2040 promicro - https://www.littlekeyboards.com/collections/new-products/products/elite-pi
   * Waveshare zero - https://www.waveshare.com/rp2040-zero.htm
+  * Boardboard Pico - https://www.boardsource.xyz/products/pico
 * Sockets
  * Low profile https://42keebs.eu/shop/parts/components/mill-max-315-sockets-3320-pins-for-pro-micro/
+   * https://www.digikey.com/en/products/detail/mill-max-manufacturing-corp/315-43-112-41-003000/4455232
  * Medium profile https://42keebs.eu/shop/parts/components/microcontroller-socket-medium-profile/
 * Hot-swap choc sockets
   * https://42keebs.eu/shop/parts/kailh-choc-hot-swap-sockets/
   * https://chosfox.com/collections/sockets-mouse-switches/products/kailh-choc-switch-1350-hot-swap-sockets
+  * https://www.digikey.com/en/products/detail/adafruit-industries-llc/5118/14671678
 * Switches
  * V1
    * https://www.littlekeyboards.com/collections/keyboard-switches/products/kailh-choc-pro-low-profile-switches
