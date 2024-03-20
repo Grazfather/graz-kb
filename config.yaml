@@ -33,57 +33,53 @@ points:
           rows.mod.skip: true
           key:
             column_net: col_outer
-            mirror.column_net: mirror_col_outer
         pinky:
           rows.mod.skip: true
           key:
             stagger: 3
             column_net: col_pinky
-            mirror.column_net: mirror_col_pinky
         ring:
           key:
             stagger: 3
             column_net: col_ring
-            mirror.column_net: mirror_col_ring
           rows:
             mod:
               column_net: col_pinky
-              mirror.column_net: mirror_col_pinky
         middle:
           key:
             stagger: 3
             column_net: col_middle
-            mirror.column_net: mirror_col_middle
           rows:
             mod:
               column_net: col_ring
-              mirror.column_net: mirror_col_ring
         index:
           key:
             stagger: -4
             column_net: col_index
-            mirror.column_net: mirror_col_index
           rows:
             mod:
               column_net: col_middle
-              mirror.column_net: mirror_col_middle
         inner:
           rows.mod.skip: true
           key:
             stagger: -2
             column_net: col_inner
-            mirror.column_net: mirror_col_inner
       rows:
         mod:
           row_net: row_mod
+          mirror.row_net: mirror_row_mod
         bottom:
           row_net: row_bottom
+          mirror.row_net: mirror_row_bottom
         home:
           row_net: row_home
+          mirror.row_net: mirror_row_home
         top:
           row_net: row_top
+          mirror.row_net: mirror_row_top
         num:
           row_net: row_num
+          mirror.row_net: mirror_row_num
       # Fix placement on KiCAD sheet
       anchor:
         shift: [100, -100]
@@ -186,25 +182,38 @@ pcbs:
           to: "{{row_net}}"
         adjust:
           shift: [0, -5]
-      board:
-        what: promicro #footprints/waveshare_rp2040_zero
-        # what: footprints/waveshare_rp2040_zero
+      mcu:
+        what: waveshare_rp2040_zero
         params:
-          orientation: down
-          # reversable: false # sic
+          P3: col_outer
+          P4: col_pinky
+          P5: col_ring
+          P6: col_middle
+          P7: col_index
+          P8: col_inner
+          P9: mirror_row_num
+          P10: mirror_row_top
+          P11: mirror_row_home
+          P12: mirror_row_bottom
+          P13: mirror_row_mod
+          P14: row_mod
+          P15: row_bottom
+          P26: row_home
+          P27: row_top
+          P28: row_num
         where:
           ref.aggregate.parts: [matrix_inner_top, mirror_matrix_inner_top]
-          rotate: -90
+          shift: [0, 12]
       oled:
-        what: oled
+        what: nice_view
         params:
-          side: "F"
-          SDA: P0
-          SCL: P1
+          VCC: VCC3V3
+          MOSI: P0
+          CS: P1
+          SCK: P2
         where:
           ref.aggregate.parts: [matrix_inner_top, mirror_matrix_inner_top]
-          shift: [-6,-19]
-          rotate: 90
+          shift: [0,6]
       holeTopLeft:
         what: mountinghole
         where:
