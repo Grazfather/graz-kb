@@ -185,6 +185,9 @@ pcbs:
       mcu:
         what: waveshare_rp2040_zero
         params:
+          P0: OLED_MOSI
+          P1: OLED_SS
+          P2: OLED_SCK
           P3: col_outer
           P4: col_pinky
           P5: col_ring
@@ -203,14 +206,15 @@ pcbs:
           P28: row_num
         where:
           ref.aggregate.parts: [matrix_inner_top, mirror_matrix_inner_top]
+          # rotate: -90
           shift: [0, 12]
       oled:
         what: nice_view
         params:
           VCC: VCC3V3
-          MOSI: P0
-          CS: P1
-          SCK: P2
+          MOSI: OLED_MOSI
+          CS: OLED_SS
+          SCK: OLED_SCK
         where:
           ref.aggregate.parts: [matrix_inner_top, mirror_matrix_inner_top]
           shift: [0,6]
