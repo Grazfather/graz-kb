@@ -41,9 +41,11 @@
   * Waveshare zero - https://www.waveshare.com/rp2040-zero.htm
   * Boardboard Pico - https://www.boardsource.xyz/products/pico
 * Sockets
- * Low profile https://42keebs.eu/shop/parts/components/mill-max-315-sockets-3320-pins-for-pro-micro/
-   * https://www.digikey.com/en/products/detail/mill-max-manufacturing-corp/315-43-112-41-003000/4455232
- * Medium profile https://42keebs.eu/shop/parts/components/microcontroller-socket-medium-profile/
+  * Low profile https://42keebs.eu/shop/parts/components/mill-max-315-sockets-3320-pins-for-pro-micro/
+    * https://www.digikey.com/en/products/detail/mill-max-manufacturing-corp/315-43-112-41-003000/4455232
+  * Medium profile https://42keebs.eu/shop/parts/components/microcontroller-socket-medium-profile/
+* Pins
+  * https://www.digikey.com/en/products/detail/mill-max-manufacturing-corp/3320-0-00-15-00-00-03-0/4147392
 * Hot-swap choc sockets
   * https://42keebs.eu/shop/parts/kailh-choc-hot-swap-sockets/
   * https://chosfox.com/collections/sockets-mouse-switches/products/kailh-choc-switch-1350-hot-swap-sockets
