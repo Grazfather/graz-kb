@@ -94,17 +94,18 @@ points:
             splay: -35
             origin: [-20.75, -19]
             column_net: col_index
-            mirror.column_net: mirror_col_index
+            mirror.column_net: col_index
         far:
           key:
             spread: 21
             splay: -5
             origin: [-9.5, -9]
             column_net: col_inner
-            mirror.column_net: mirror_col_inner
+            mirror.column_net: col_inner
       rows:
         thumb:
           row_net: row_mod
+          mirror.row_net: mirror_row_mod
   mirror:
     ref: matrix_inner_home
     distance: cx+60
