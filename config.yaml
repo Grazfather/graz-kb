@@ -8,6 +8,14 @@ units:
   # Padding Variables
   px: kx + 4
   py: ky + 4
+  kcow: 13.8 # key cutout hole width (cherry, choc v2: 14, choc v1: 13.8)
+  kcoh: 13.8 # key cutout hole height (cherry, choc v2: 14, choc v1: 13.8)
+  keycw: 17.5 # keycap width (cherry: 18, choc: 17.5)
+  keych: 16.5 # keycap height (cherry: 18, choc: 16.5)
+  vertical_diode_shift: 1.5 # How much to shift to avoid overlap
+  horizontal_diode_shift: -0.5 kcow - 0.85
+  diode_rotation: -180 # Diode rotation
+  switch_rotation: 180 # Hotswap south, led north
   # For preview only. We show slightly smaller to ID overlaps
   $default_width: cx-1
   $default_height: cy-1
@@ -18,23 +26,29 @@ points:
     spread: kx
     tags:
       1u: true
-    footprints:
-      choc_hotswap:
-        type: choc
-        params:
-          hotswap: true
-          reverse: true
-          keycaps: true
+        # What is this?
+    # footprints:
+    #   choc_hotswap:
+    #     type: choc
+    #     params:
+    #       hotswap: true
+    #       reverse: true
+    #       keycaps: true
 
   zones:
     matrix:
+      # Fix placement on KiCAD sheet
+      anchor:
+        shift: [100, -100]
       columns:
         outer:
-          rows.mod.skip: true
+          rows:
+            mod.skip: true
           key:
             column_net: col_outer
         pinky:
-          rows.mod.skip: true
+          rows:
+            mod.skip: true
           key:
             stagger: 3
             column_net: col_pinky
@@ -43,24 +57,22 @@ points:
             stagger: 3
             column_net: col_ring
           rows:
-            mod:
-              column_net: col_pinky
+            mod.column_net: col_pinky
         middle:
           key:
             stagger: 3
             column_net: col_middle
           rows:
-            mod:
-              column_net: col_ring
+            mod.column_net: col_ring
         index:
           key:
             stagger: -4
             column_net: col_index
           rows:
-            mod:
-              column_net: col_middle
+            mod.column_net: col_middle
         inner:
-          rows.mod.skip: true
+          rows:
+            mod.skip: true
           key:
             stagger: -2
             column_net: col_inner
@@ -80,9 +92,6 @@ points:
         num:
           row_net: row_num
           mirror.row_net: mirror_row_num
-      # Fix placement on KiCAD sheet
-      anchor:
-        shift: [100, -100]
     thumbfan:
       anchor:
         ref: matrix_inner_mod
@@ -166,25 +175,37 @@ pcbs:
       main:
         outline: board
     footprints:
-      choc_hotswap:
-        what: choc
+      key_switches:
+        what: ceoloide/switch_choc_v1_v2
         where: true
         params:
           hotswap: true
-          reverse: false
-          keycaps: true
+          reversible: false
+          side: B
           from: "{{column_net}}"
           to: "{{colrow}}"
+          choc_v2_support: false
+          show_keycaps: true
+          keycaps_x: keycw
+          keycaps_y: keych
+        adjust:
+          rotate: switch_rotation
       diode:
-        what: diode
+        what: ceoloide/diode_tht_sod123
         where: true
         params:
           from: "{{colrow}}"
           to: "{{row_net}}"
+          include_tht: false
+          reversible: false
+          side: B
+          # Don't mirror
+          # resist: true
         adjust:
-          shift: [0, -5]
+          shift: [horizontal_diode_shift,vertical_diode_shift]
+          rotate: 90 + diode_rotation
       mcu:
-        what: waveshare_rp2040_zero
+        what: grazfather/waveshare_rp2040_zero
         params:
           P0: OLED_MOSI
           P1: OLED_SS
@@ -210,7 +231,7 @@ pcbs:
           # rotate: -90
           shift: [0, 12]
       oled:
-        what: nice_view
+        what: ceoloide/nice_view
         params:
           VCC: VCC3V3
           MOSI: OLED_MOSI
@@ -232,7 +253,7 @@ pcbs:
       holeTopInnerLeft:
         what: mountinghole
         where:
-          ref: [matrix_index_num]
+          ref: [matrix_inner_num]
           shift: [0.5kx, -0.4ky]
       holeBottomInnerLeft:
         what: mountinghole
@@ -252,7 +273,7 @@ pcbs:
       holeTopInnerRight:
         what: mountinghole
         where:
-          ref: [mirror_matrix_index_num]
+          ref: [mirror_matrix_inner_num]
           shift: [0.5kx, -0.4ky]
       holeBottomInnerRight:
         what: mountinghole
