@@ -249,17 +249,17 @@ pcbs:
         what: mountinghole
         where:
           ref: [matrix_outer_bottom]
-          shift: [0.5kx, -0.3ky]
+          shift: [0.5kx, -0.65ky]
       holeTopInnerLeft:
         what: mountinghole
         where:
           ref: [matrix_inner_num]
-          shift: [0.5kx, -0.4ky]
+          shift: [0.75kx, -0.5ky]
       holeBottomInnerLeft:
         what: mountinghole
         where:
           ref: [matrix_index_mod]
-          shift: [0.5kx, -0.35ky]
+          shift: [0.65kx, -0.35ky]
       holeTopRight:
         what: mountinghole
         where:
@@ -269,14 +269,14 @@ pcbs:
         what: mountinghole
         where:
           ref: [mirror_matrix_outer_bottom]
-          shift: [0.5kx, -0.3ky]
+          shift: [0.5kx, -0.65ky]
       holeTopInnerRight:
         what: mountinghole
         where:
           ref: [mirror_matrix_inner_num]
-          shift: [0.5kx, -0.4ky]
+          shift: [0.75kx, -0.5ky]
       holeBottomInnerRight:
         what: mountinghole
         where:
           ref: [mirror_matrix_index_mod]
-          shift: [0.5kx, -0.35ky]
+          shift: [0.65kx, -0.35ky]
