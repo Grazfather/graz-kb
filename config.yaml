@@ -210,17 +210,17 @@ pcbs:
           P0: OLED_MOSI
           P1: OLED_SS
           P2: OLED_SCK
-          P3: col_outer
-          P4: col_pinky
-          P5: col_ring
-          P6: col_middle
-          P7: col_index
+          P3: mirror_row_num
+          P4: mirror_row_top
+          P5: mirror_row_home
+          P6: mirror_row_bottom
+          P7: mirror_row_mod
           P8: col_inner
-          P9: mirror_row_num
-          P10: mirror_row_top
-          P11: mirror_row_home
-          P12: mirror_row_bottom
-          P13: mirror_row_mod
+          P9: col_index
+          P10: col_middle
+          P11: col_ring
+          P12: col_pinky
+          P13: col_outer
           P14: row_mod
           P15: row_bottom
           P26: row_home
