@@ -200,10 +200,10 @@ pcbs:
           reversible: false
           side: B
           # Don't mirror
-          # resist: true
         adjust:
           shift: [horizontal_diode_shift,vertical_diode_shift]
           rotate: 90 + diode_rotation
+          resist: true
       mcu:
         what: grazfather/waveshare_rp2040_zero
         params:
