@@ -344,6 +344,10 @@ pcbs:
         params:
           side: B
           reverse_mount: true
+          # https://grabcad.com/library/sk6812mini-e-led-1
+          led_3dmodel_filename: ${SCOTTOKEEBS_KICAD}/3dmodels/ScottoKeebs_Components.3dshapes/LED_SK6812MINI-e.step
+          led_3dmodel_xyz_offset: [0, 5, -1.75]
+          led_3dmodel_xyz_rotation: [0, 180, 0]
           P1: VCC3V3
           P2: "{{key.led_next}}" # DOUT
           P3: GND
