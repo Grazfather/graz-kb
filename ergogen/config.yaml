@@ -241,7 +241,7 @@ pcbs:
       oled:
         what: ceoloide/nice_view
         params:
-          VCC: VCC3V3
+          VCC: VCC
           MOSI: OLED_MOSI
           CS: OLED_SS
           SCK: OLED_SCK
