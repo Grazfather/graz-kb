@@ -50,11 +50,11 @@ points:
           rows:
             mod.skip: true
           key:
-            stagger: 3
+            stagger: 2
             column_net: col_pinky
         ring:
           key:
-            stagger: 3
+            stagger: 7
             column_net: col_ring
           rows:
             mod.column_net: col_pinky
@@ -66,7 +66,7 @@ points:
             mod.column_net: col_ring
         index:
           key:
-            stagger: -4
+            stagger: -6
             column_net: col_index
           rows:
             mod.column_net: col_middle
