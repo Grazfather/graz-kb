@@ -236,7 +236,6 @@ pcbs:
           P28: row_num
         where:
           ref.aggregate.parts: [matrix_inner_top, mirror_matrix_inner_top]
-          # rotate: -90
           shift: [0, 12]
       oled:
         what: ceoloide/nice_view
@@ -247,7 +246,7 @@ pcbs:
           SCK: OLED_SCK
         where:
           ref.aggregate.parts: [matrix_inner_top, mirror_matrix_inner_top]
-          shift: [0,6]
+          shift: [0, 7]
       holeTopLeft:
         what: mountinghole
         where:
