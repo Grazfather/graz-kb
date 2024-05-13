@@ -141,15 +141,27 @@ points:
             bottom.key:
               led_prev: LED_26
               led_next: LED_27
+            bottom.mirror.key:
+              led_prev: LED_33
+              led_next: LED_34
             home.key:
               led_prev: LED_27
               led_next: LED_28
+            home.mirror.key:
+              led_prev: LED_32
+              led_next: LED_33
             top.key:
               led_prev: LED_28
               led_next: LED_29
+            top.mirror.key:
+              led_prev: LED_31
+              led_next: LED_32
             num.key:
               led_prev: LED_29
               led_next: LED_30
+            num.mirror.key:
+              led_prev: LED_30
+              led_next: LED_31
           key:
             stagger: -2
             column_net: col_inner
@@ -180,6 +192,9 @@ points:
           rows.thumb.key:
             led_prev: LED_24
             led_next: LED_25
+          rows.thumb.mirror.key:
+            led_prev: LED_35
+            led_next: LED_36
           key:
             spread: 4+kx
             splay: -35
@@ -190,6 +205,9 @@ points:
           rows.thumb.key:
             led_prev: LED_25
             led_next: LED_26
+          rows.thumb.mirror.key:
+            led_prev: LED_34
+            led_next: LED_35
           key:
             spread: 21
             splay: -5
