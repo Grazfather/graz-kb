@@ -16,6 +16,7 @@ units:
   horizontal_diode_shift: -0.5 kcow - 0.85
   diode_rotation: -180
   switch_rotation: 180 # Hotswap south, led north
+  screw_radius: 1.1 # M2 screws
   # For preview only. We show slightly smaller to ID overlaps
   $default_width: cx-1
   $default_height: cy-1
@@ -28,6 +29,8 @@ points:
       1u: true
   zones:
     matrix:
+      key.tags:
+        - key
       # Fix placement on KiCAD sheet
       anchor:
         shift: [100, -100]
@@ -84,6 +87,8 @@ points:
           row_net: row_num
           mirror.row_net: mirror_row_num
     thumbfan:
+      key.tags:
+        - key
       anchor:
         ref: matrix_inner_mod
         shift: [2, 8]
@@ -106,13 +111,44 @@ points:
         thumb:
           row_net: row_mod
           mirror.row_net: mirror_row_mod
+    # Helper points
+    hole_top_left:
+      key.tags:
+        - hole
+      anchor:
+        ref: [matrix_outer_bottom]
+        shift: [0.5kx, -0.65ky]
+    hole_bottom_left:
+      key.tags:
+        - hole
+      anchor:
+        ref: [matrix_outer_num]
+        shift: [-0.5kx, 0.5ky]
+    hole_top_inner_left:
+      key.tags:
+        - hole
+      anchor:
+        ref: [matrix_inner_num]
+        shift: [0.75kx, -0.5ky]
+    hole_bottom_inner_left:
+      key.tags:
+        - hole
+      anchor:
+        ref: [matrix_index_mod]
+        shift: [0.70kx, -0.35ky]
+    hole_bottom_inner_inner_left:
+      key.tags:
+        - hole
+      anchor:
+        ref: [thumbfan_far_thumb]
+        shift: [0.70kx, -0.20ky]
   mirror:
     ref: matrix_inner_home
     distance: cx+60
 outlines:
   keys:
     - what: rectangle
-      where: true
+      where: /key/
       bound: false
       size: [kcow, kcoh]
   board:
@@ -149,10 +185,20 @@ outlines:
         - ref: mirror_thumbfan_far_thumb
           shift: [0.55px,-0.55py]
       fillet: 5
+  screws:
+    - what: circle
+      where: /hole/
+      radius: screw_radius
   combo:
     - name: board
     - operation: subtract
       name: keys
+    - operation: subtract
+      name: screws
+  pcb_cut:
+    - name: board
+    - operation: subtract
+      name: screws
 pcbs:
   keyboard:
     outlines:
@@ -161,7 +207,7 @@ pcbs:
     footprints:
       key_switches:
         what: ceoloide/switch_choc_v1_v2
-        where: true
+        where: /key/
         params:
           hotswap: true
           reversible: false
@@ -181,7 +227,7 @@ pcbs:
           rotate: switch_rotation
       diode:
         what: ceoloide/diode_tht_sod123
-        where: true
+        where: /key/
         params:
           from: "{{colrow}}"
           to: "{{row_net}}"
@@ -233,51 +279,31 @@ pcbs:
           shift: [0, 7]
       holeTopLeft:
         what: mountinghole
-        where:
-          ref: [matrix_outer_num]
-          shift: [-0.5kx, 0.5ky]
+        where.ref: [hole_top_left]
       holeBottomLeft:
         what: mountinghole
-        where:
-          ref: [matrix_outer_bottom]
-          shift: [0.5kx, -0.65ky]
+        where.ref: [hole_bottom_left]
       holeTopInnerLeft:
         what: mountinghole
-        where:
-          ref: [matrix_inner_num]
-          shift: [0.75kx, -0.5ky]
+        where.ref: [hole_top_inner_left]
       holeBottomInnerLeft:
         what: mountinghole
-        where:
-          ref: [matrix_index_mod]
-          shift: [0.70kx, -0.35ky]
+        where.ref: [hole_bottom_inner_left]
       holeBottomInnerInnerLeft:
         what: mountinghole
-        where:
-          ref: [thumbfan_far_thumb]
-          shift: [0.70kx, -0.20ky]
+        where.ref: [hole_bottom_inner_inner_left]
       holeTopRight:
         what: mountinghole
-        where:
-          ref: [mirror_matrix_outer_num]
-          shift: [-0.5kx, 0.5ky]
+        where.ref: [mirror_hole_top_left]
       holeBottomRight:
         what: mountinghole
-        where:
-          ref: [mirror_matrix_outer_bottom]
-          shift: [0.5kx, -0.65ky]
+        where.ref: [mirror_hole_bottom_left]
       holeTopInnerRight:
         what: mountinghole
-        where:
-          ref: [mirror_matrix_inner_num]
-          shift: [0.75kx, -0.5ky]
-      holeBottomInnerInnerRight:
-        what: mountinghole
-        where:
-          ref: [mirror_thumbfan_far_thumb]
-          shift: [0.70kx, -0.20ky]
+        where.ref: [mirror_hole_top_inner_left]
       holeBottomInnerRight:
         what: mountinghole
-        where:
-          ref: [mirror_matrix_index_mod]
-          shift: [0.70kx, -0.35ky]
+        where.ref: [mirror_hole_bottom_inner_left]
+      holeBottomInnerInnerRight:
+        what: mountinghole
+        where.ref: [mirror_hole_bottom_inner_inner_left]
