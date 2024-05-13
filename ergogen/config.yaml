@@ -26,15 +26,6 @@ points:
     spread: kx
     tags:
       1u: true
-        # What is this?
-    # footprints:
-    #   choc_hotswap:
-    #     type: choc
-    #     params:
-    #       hotswap: true
-    #       reverse: true
-    #       keycaps: true
-
   zones:
     matrix:
       # Fix placement on KiCAD sheet
@@ -119,18 +110,11 @@ points:
     ref: matrix_inner_home
     distance: cx+60
 outlines:
-  raw:
-    - what: rectangle
-      where: true
-      size: [2px, 2py]
-      fillet: 4
   keys:
     - what: rectangle
       where: true
       bound: false
-      #size: [kx - 0.5, ky - 0.5]
-      #size: [kx, ky]
-      size: [13.80, 13.80]
+      size: [kcow, kcoh]
   board:
     - what: polygon
       operation: stack
