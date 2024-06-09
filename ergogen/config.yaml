@@ -245,10 +245,10 @@ pcbs:
           mcu_3dmodel_filename: ${SCOTTOKEEBS_KICAD}/3dmodels/ScottoKeebs_MCU.3dshapes/RP2040_Zero.step
           mcu_3dmodel_xyz_offset: [0, 0.5, 0]
           mcu_3dmodel_xyz_rotation: [0, 0, -90]
-          P0: OLED_MOSI
+          P0: mirror_row_num
           P1: OLED_SS
           P2: OLED_SCK
-          P3: mirror_row_num
+          P3: OLED_MOSI
           P4: mirror_row_top
           P5: mirror_row_home
           P6: mirror_row_bottom
