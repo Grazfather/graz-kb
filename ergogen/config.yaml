@@ -8,6 +8,8 @@ units:
   # Padding Variables
   px: kx + 4
   py: ky + 4
+  led_pos_x: 0 # Led X position relative to the switch center
+  led_pos_y: 4.7 # Led Y position relative to the switch center
   kcow: 13.8 # key cutout hole width (cherry, choc v2: 14, choc v1: 13.8)
   kcoh: 13.8 # key cutout hole height (cherry, choc v2: 14, choc v1: 13.8)
   keycw: 17.5 # keycap width (cherry: 18, choc: 17.5)
@@ -38,11 +40,35 @@ points:
         outer:
           rows:
             mod.skip: true
+            bottom.key:
+              led_prev: LED_4
+              led_next: LED_5
+            home.key:
+              led_prev: LED_3
+              led_next: LED_4
+            top.key:
+              led_prev: LED_2
+              led_next: LED_3
+            num.key:
+              led_prev: LED_1
+              led_next: LED_2
           key:
             column_net: col_outer
         pinky:
           rows:
             mod.skip: true
+            bottom.key:
+              led_prev: LED_6
+              led_next: LED_7
+            home.key:
+              led_prev: LED_7
+              led_next: LED_8
+            top.key:
+              led_prev: LED_8
+              led_next: LED_9
+            num.key:
+              led_prev: LED_9
+              led_next: LED_10
           key:
             stagger: 2
             column_net: col_pinky
@@ -52,21 +78,90 @@ points:
             column_net: col_ring
           rows:
             mod.column_net: col_pinky
+            mod.key:
+              led_prev: LED_5
+              led_next: LED_6
+            bottom.key:
+              led_prev: LED_13
+              led_next: LED_14
+            home.key:
+              led_prev: LED_12
+              led_next: LED_13
+            top.key:
+              led_prev: LED_11
+              led_next: LED_12
+            num.key:
+              led_prev: LED_10
+              led_next: LED_11
         middle:
           key:
             stagger: 3
             column_net: col_middle
           rows:
             mod.column_net: col_ring
+            mod.key:
+              led_prev: LED_14
+              led_next: LED_15
+            bottom.key:
+              led_prev: LED_16
+              led_next: LED_17
+            home.key:
+              led_prev: LED_17
+              led_next: LED_18
+            top.key:
+              led_prev: LED_18
+              led_next: LED_19
+            num.key:
+              led_prev: LED_19
+              led_next: LED_20
         index:
           key:
             stagger: -6
             column_net: col_index
           rows:
             mod.column_net: col_middle
+            mod.key:
+              led_prev: LED_15
+              led_next: LED_16
+            bottom.key:
+              led_prev: LED_23
+              led_next: LED_24
+            home.key:
+              led_prev: LED_22
+              led_next: LED_23
+            top.key:
+              led_prev: LED_21
+              led_next: LED_22
+            num.key:
+              led_prev: LED_20
+              led_next: LED_21
         inner:
           rows:
             mod.skip: true
+            bottom.key:
+              led_prev: LED_26
+              led_next: LED_27
+            bottom.mirror.key:
+              led_prev: LED_33
+              led_next: LED_34
+            home.key:
+              led_prev: LED_27
+              led_next: LED_28
+            home.mirror.key:
+              led_prev: LED_32
+              led_next: LED_33
+            top.key:
+              led_prev: LED_28
+              led_next: LED_29
+            top.mirror.key:
+              led_prev: LED_31
+              led_next: LED_32
+            num.key:
+              led_prev: LED_29
+              led_next: LED_30
+            num.mirror.key:
+              led_prev: LED_30
+              led_next: LED_31
           key:
             stagger: -2
             column_net: col_inner
@@ -94,6 +189,12 @@ points:
         shift: [2, 8]
       columns:
         home:
+          rows.thumb.key:
+            led_prev: LED_24
+            led_next: LED_25
+          rows.thumb.mirror.key:
+            led_prev: LED_35
+            led_next: LED_36
           key:
             spread: 4+kx
             splay: -35
@@ -101,6 +202,12 @@ points:
             column_net: col_index
             mirror.column_net: col_index
         far:
+          rows.thumb.key:
+            led_prev: LED_25
+            led_next: LED_26
+          rows.thumb.mirror.key:
+            led_prev: LED_34
+            led_next: LED_35
           key:
             spread: 21
             splay: -5
@@ -264,6 +371,7 @@ pcbs:
           P26: row_home
           P27: row_top
           P28: row_num
+          P29: LED_1
         where:
           ref.aggregate.parts: [matrix_inner_top, mirror_matrix_inner_top]
           shift: [0, 12]
@@ -278,6 +386,22 @@ pcbs:
         where:
           ref.aggregate.parts: [matrix_inner_top, mirror_matrix_inner_top]
           shift: [0, 7]
+      per_key_leds:
+        what: ceoloide/led_sk6812mini-e
+        where: /key/
+        params:
+          side: B
+          reverse_mount: true
+          # https://grabcad.com/library/sk6812mini-e-led-1
+          led_3dmodel_filename: ${SCOTTOKEEBS_KICAD}/3dmodels/ScottoKeebs_Components.3dshapes/LED_SK6812MINI-e.step
+          led_3dmodel_xyz_offset: [0, 5, -1.75]
+          led_3dmodel_xyz_rotation: [0, 180, 0]
+          P1: VCC
+          P2: "{{key.led_next}}" # DOUT
+          P3: GND
+          P4: "{{key.led_prev}}" # DIN
+        adjust:
+          shift: [led_pos_x, led_pos_y]
       holeTopLeft:
         what: mountinghole
         where.ref: [hole_top_left]
