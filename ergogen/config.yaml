@@ -274,6 +274,7 @@ pcbs:
           MOSI: OLED_MOSI
           CS: OLED_SS
           SCK: OLED_SCK
+          include_silkscreen: true
         where:
           ref.aggregate.parts: [matrix_inner_top, mirror_matrix_inner_top]
           shift: [0, 7]
