@@ -241,6 +241,7 @@ pcbs:
       mcu:
         what: grazfather/waveshare_rp2040_zero
         params:
+          orientation: up
           mcu_3dmodel_filename: ${SCOTTOKEEBS_KICAD}/3dmodels/ScottoKeebs_MCU.3dshapes/RP2040_Zero.step
           mcu_3dmodel_xyz_offset: [0, 0.5, 0]
           mcu_3dmodel_xyz_rotation: [0, 0, -90]
