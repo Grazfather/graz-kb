@@ -2,6 +2,8 @@
 
 ![](./images/keyboard.jpg)
 
+[ZMK configuration and keymap](https://github.com/Grazfather/zmk-config-grazkb)
+
 ## Requirements
 * ~58 keys
 * Full number row and alphabet
