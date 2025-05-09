@@ -1,4 +1,7 @@
 # Graziano's keyboard
+
+![](./images/keyboard.jpg)
+
 ## Requirements
 * ~58 keys
 * Full number row and alphabet
